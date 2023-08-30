@@ -14,9 +14,9 @@ const NavLink = ({ data }) => {
         to={data.path}
         className={`${
           pathname === data.path
-            ? "text-primary-50 font-bold text-base"
+            ? "text-primary-50 font-bold text-base mb-2 lg:mb-0"
             : "text-gray-70 text-sm"
-        } pb-4 relative duration-300`}
+        } pb-2 lg:pb-4 relative duration-300`}
       >
         {data.title}
         <motion.span

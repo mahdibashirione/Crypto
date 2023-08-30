@@ -45,6 +45,13 @@ export default {
           90: "#4C5254",
           100: "#2E3133",
         },
+        yellow: "#fff110",
+      },
+      boxShadow: {
+        primary: "0 0 20px -5px rgba(0, 0, 0, 0.3)",
+      },
+      maxWidth: {
+        primary: "1800px",
       },
     },
   },

@@ -23,7 +23,7 @@ const Header = () => {
   }
 
   return (
-    <header className="py-2 px-1 bg-blue-500">
+    <header className="py-2 px-1 fixed w-full top-0 right-0 z-30">
       <nav className="container p-4 rounded-xl flex items-center justify-between bg-white">
         <button onClick={handleShowSidebar} className="lg:hidden">
           <FiAlignJustify className="text-3xl text-primary-70" />

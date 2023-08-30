@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import NavLink from "./NavLink";
+import { useEffect } from "react";
 
 const Sidebar = ({ data, isShow, handleCloseSidebar }) => {
-  const screenWidth = window.innerWidth;
+  let screenWidth = window.innerWidth;
 
   const container = {
     hidden: { right: screenWidth - screenWidth * 2 },
@@ -22,6 +23,10 @@ const Sidebar = ({ data, isShow, handleCloseSidebar }) => {
     },
   };
 
+  window.addEventListener("resize", () => {
+    window.innerWidth < 1024 && (screenWidth = window.innerWidth);
+  });
+
   return (
     <motion.aside
       initial={{ right: screenWidth - screenWidth * 2 }}
@@ -38,7 +43,6 @@ const Sidebar = ({ data, isShow, handleCloseSidebar }) => {
       </motion.button>
       <ul className="flex flex-col items-center gap-y-6">
         {data.map((dataItem) => {
-          console.log(dataItem.title);
           return (
             <motion.li
               onClick={handleCloseSidebar}
