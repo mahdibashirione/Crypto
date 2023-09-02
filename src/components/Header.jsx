@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <header className="py-2 px-1 fixed w-full top-0 right-0 z-30">
-      <nav className="container p-4 rounded-xl flex items-center justify-between bg-white">
+      <nav className="container p-4 rounded-xl flex items-center justify-between bg-white shadow">
         <button onClick={handleShowSidebar} className="lg:hidden">
           <FiAlignJustify className="text-3xl text-primary-70" />
         </button>
@@ -45,7 +45,7 @@ const Header = () => {
         <div className="flex items-center gap-2">
           <Link
             to="/profile"
-            className="flex items-center gap-2 bg-primary-50 rounded-lg p-[7px] lg:p-3 lg:rounded-xl text-gray-5"
+            className="flex items-center gap-2 bg-primary-50 rounded-lg p-[7px] lg:p-3 lg:rounded-xl text-gray-5 hover:scale-[0.97] duration-300 hover:shadow-primary-50 shadow-transparent shadow-primary"
           >
             <span className="hidden lg:block text-sm font-semibold">
               ورود / ثبت نام
@@ -63,7 +63,7 @@ const Header = () => {
           </Link>
           <Link
             to="/profile"
-            className="flex items-center gap-2 bg-secendry-50 rounded-lg p-[7px] lg:p-3 lg:rounded-xl text-gray-5"
+            className="flex items-center gap-2 bg-secendry-50 rounded-lg p-[7px] lg:p-3 lg:rounded-xl text-gray-5 hover:scale-[0.97] duration-300 hover:shadow-secendry-50 shadow-transparent shadow-primary"
           >
             <span className="hidden lg:block text-sm font-semibold">
               پشتیبانی
