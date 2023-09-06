@@ -57,9 +57,9 @@ const CrypterMarkets = () => {
     },
   };
   const animateItems = {
-    hidden: { scale: 0, opacity: 0 },
+    hidden: { y: -50, opacity: 0 },
     show: {
-      scale: 1,
+      y: 0,
       opacity: 1,
     },
   };
@@ -105,7 +105,7 @@ const CrypterMarkets = () => {
               return (
                 <motion.li
                   variants={animateItems}
-                  className="select-none flex-1 min-w-[200px] py-4 px-2 rounded-[49px] bg-primary-50 flex flex-col items-center justify-center gap-y-2"
+                  className="select-none flex-1 min-w-[140px] py-4 px-2 rounded-[49px] bg-primary-50 flex flex-col items-center justify-center gap-y-2"
                 >
                   <div className="w-16 h-16 lg:w-[104px] lg:h-[104px] rounded-full bg-gray-5">
                     <img

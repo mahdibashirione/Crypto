@@ -5,7 +5,7 @@
 @layer components {
   @font-face {
     font-family: "estedad";
-    src: url(/public/font/Estedad-Regular.ttf);
+    src: url(/font/Estedad-Regular.ttf);
   }
 
   html {

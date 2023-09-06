@@ -21,7 +21,7 @@ const Landing = () => {
           <p className="text-gray-5 md:text-lg font-light text-xs lg:text-xl xl:text-2xl mt-3">
             مطمئن ترین ارز دیجیتال در ایران
           </p>
-          <ButtonOutline className="w-fit mt-9 lg:mt-14">
+          <ButtonOutline className="w-fit mt-9 lg:mt-14 text-yellow border-yellow hover:bg-yellow hover:text-gray-100 hover:shadow-yellow">
             بزن بریم برای دریافت جایزه
           </ButtonOutline>
         </article>
@@ -30,6 +30,7 @@ const Landing = () => {
           <img
             className="z-10 md:-ml-7 md:w-[300px] lg:w-[438px]"
             alt=""
+            loading="lazy"
             src="/svg/Wallet2.svg"
           />
           <span className="block absolute bottom-4 rounded left-4 w-24 h-[400px] md:w-[110px] md:bottom-24 md:left-1 lg:w-[220px] md:h-[1000px] lg:bottom-28 lg:left-3 lg:mx-0 bg-yellow"></span>
