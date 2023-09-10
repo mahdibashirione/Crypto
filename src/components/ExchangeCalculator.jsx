@@ -1,17 +1,50 @@
 import ButtonContain from "./common/ButtonContain";
 import { BiCaretDown } from "react-icons/bi";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const ExchangeCalculator = () => {
+  const container = useRef();
+  const isInView = useInView(container, { once: true });
+
+  const animateContaier = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        delay: 0.4,
+        delayChildren: 0.2,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  const animateItems = {
+    hidden: { y: -50, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
-    <section>
-      <div className="container select-none mb-8">
+    <section className="pt-16 pb-8">
+      <motion.div
+        ref={container}
+        variants={animateContaier}
+        animate={isInView ? "show" : "hidden"}
+        className="container select-none mb-8"
+      >
         {/* header */}
-        <article className="px-4 flex gap-x-2 justify-between md:justify-start">
+        <motion.article
+          variants={animateItems}
+          className="px-4 flex gap-x-2 justify-between md:justify-start"
+        >
           <div className="flex">
-            <p className="text-sm md:text-xl lg:text-2xl whitespace-nowrap">
+            <p className="font-semibold text-sm md:text-xl lg:text-2xl whitespace-nowrap">
               ماشین حساب آنلاین
             </p>
-            <p className="md:text-2xl md:-mt-4 lg:text-3xl font-semibold text-red-500 -mt-3">
+            <p className="text-xl md:text-2xl md:-mt-4 lg:text-3xl font-bold text-red-500 -mt-3">
               معامله
             </p>
           </div>
@@ -49,22 +82,28 @@ const ExchangeCalculator = () => {
               />
             </svg>
           </div>
-        </article>
+        </motion.article>
         {/* detail */}
         <article className="w-full py-6 flex items-center overflow-hidden">
           {/* right */}
-          <div className="flex-1 hidden md:flex items-center justify-center">
+          <motion.div
+            variants={animateItems}
+            className="flex-1 hidden md:flex items-center justify-center"
+          >
             <img
               className="object-cover max-h-[450px]"
               src="/svg/WalletExchange.svg"
               alt=""
             />
-          </div>
+          </motion.div>
           {/* left */}
           <div className="md:flex-1 w-full flex justify-center items-center">
             <div className="w-full max-w-[380px] relative flex px-4">
               {/* card */}
-              <div className="p-4 lg:p-8 from-white/50 to-gray-50/80 bg-gradient-to-tr backdrop-blur-[2px] w-full rounded-2xl border-2 border-gray-60 relative mt-4 z-10 mx-auto">
+              <motion.div
+                variants={animateItems}
+                className="p-4 lg:p-8 from-white/50 to-gray-50/80 bg-gradient-to-tr backdrop-blur-[2px] w-full rounded-2xl border-2 border-gray-60 relative mt-4 z-10 mx-auto"
+              >
                 <div className="w-full flex items-center justify-between mb-10">
                   <span className="font-bold text-2xl leading-9 text-primary-50">
                     مبادله
@@ -190,9 +229,10 @@ const ExchangeCalculator = () => {
                 <ButtonContain className="w-full flex justify-center py-3 mt-2 bg-secendry-50 font-bold border-secendry-50 shadow-primary hover:shadow-secendry-50">
                   تبادل کن
                 </ButtonContain>
-              </div>
+              </motion.div>
               {/* background card */}
-              <img
+              <motion.img
+                variants={animateItems}
                 className="absolute md:-left-0 lg:-left-16 lg:-top-8 -top-6 -left-14 z-0"
                 src="/svg/CartBank.svg"
                 loading="lazy"
@@ -201,7 +241,7 @@ const ExchangeCalculator = () => {
             </div>
           </div>
         </article>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -77,8 +77,8 @@ const CrypterMarkets = () => {
           className="flex items-center justify-between md:gap-x-4 relative mb-8"
         >
           <div className="flex z-10">
-            <p className="md:text-xl lg:text-2xl">بازارهای</p>
-            <p className="md:text-2xl md:-mt-4 lg:text-3xl font-semibold text-red-500 -mt-3">
+            <p className="font-semibold md:text-xl lg:text-2xl">بازارهای</p>
+            <p className="text-xl md:text-2xl md:-mt-4 lg:text-3xl font-bold text-red-500 -mt-3">
               کریپتر
             </p>
           </div>

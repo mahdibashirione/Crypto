@@ -1,3 +1,5 @@
+import Crypter from "../components/Crypter";
+import CrypterArticles from "../components/CrypterArticles";
 import CrypterMarkets from "../components/CrypterMarkets";
 import ExchangeCalculator from "../components/ExchangeCalculator";
 import Header from "../components/Header";
@@ -13,6 +15,8 @@ const HomePage = () => {
       <OnlinePrices />
       <WhyCrypter />
       <ExchangeCalculator />
+      <Crypter />
+      <CrypterArticles />
     </>
   );
 };
